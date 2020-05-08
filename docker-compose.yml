@@ -1,0 +1,26 @@
+version: '3'
+services:
+  flask:
+    image: dicom-flask
+    build: docker/flask
+    volumes:
+      - "./app:/app"
+  nginx:
+    image: dicom-nginx
+    build: docker/nginx
+    ports:
+      - 5000:80
+    depends_on:
+      - flask
+  mongo:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
