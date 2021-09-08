@@ -2,5 +2,5 @@ Flask==1.1.2
 uWSGI==2.0.17.1
 pydicom==1.4.2
 dicognito==0.9.1
-Pillow==7.1.1
+Pillow==8.3.2
 numpy==1.18.2
