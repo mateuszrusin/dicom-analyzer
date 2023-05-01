@@ -1,4 +1,4 @@
-Flask==1.1.2
+Flask==2.3.2
 uWSGI==2.0.17.1
 pydicom==1.4.2
 dicognito==0.9.1
